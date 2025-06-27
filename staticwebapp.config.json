@@ -1,0 +1,42 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/admin",
+      "redirect": "https://4.213.183.90/wp-admin"
+    },
+    {
+      "route": "/admin/*",
+      "redirect": "https://4.213.183.90/wp-admin/*"
+    },
+    {
+      "route": "/wp-admin/*",
+      "redirect": "https://4.213.183.90/wp-admin/*"
+    },
+    {
+      "route": "/wp-login.php",
+      "redirect": "https://4.213.183.90/wp-login.php"
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["anonymous"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization"
+  }
+} 
