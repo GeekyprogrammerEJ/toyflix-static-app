@@ -2,19 +2,19 @@
   "routes": [
     {
       "route": "/admin",
-      "serveBlob": "/admin.html"
+      "redirect": "/admin.html"
     },
     {
       "route": "/admin/*",
-      "serveBlob": "/admin.html"
+      "redirect": "/admin.html"
     },
     {
       "route": "/wp-admin/*",
-      "serveBlob": "/admin.html"
+      "redirect": "/admin.html"
     },
     {
       "route": "/wp-login.php",
-      "serveBlob": "/admin.html"
+      "redirect": "/admin.html"
     },
     {
       "route": "/wp-content/*",
