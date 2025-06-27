@@ -2,35 +2,35 @@
   "routes": [
     {
       "route": "/admin",
-      "rewrite": "https://4.213.183.90/wp-admin"
+      "serveBlob": "/admin.html"
     },
     {
       "route": "/admin/*",
-      "rewrite": "https://4.213.183.90/wp-admin/*"
+      "serveBlob": "/admin.html"
     },
     {
       "route": "/wp-admin/*",
-      "rewrite": "https://4.213.183.90/wp-admin/*"
+      "serveBlob": "/admin.html"
     },
     {
       "route": "/wp-login.php",
-      "rewrite": "https://4.213.183.90/wp-login.php"
+      "serveBlob": "/admin.html"
     },
     {
       "route": "/wp-content/*",
-      "rewrite": "https://4.213.183.90/wp-content/*"
+      "redirect": "https://4.213.183.90/wp-content/*"
     },
     {
       "route": "/wp-includes/*",
-      "rewrite": "https://4.213.183.90/wp-includes/*"
+      "redirect": "https://4.213.183.90/wp-includes/*"
     },
     {
       "route": "/wp-json/*",
-      "rewrite": "https://4.213.183.90/wp-json/*"
+      "redirect": "https://4.213.183.90/wp-json/*"
     },
     {
       "route": "/xmlrpc.php",
-      "rewrite": "https://4.213.183.90/xmlrpc.php"
+      "redirect": "https://4.213.183.90/xmlrpc.php"
     },
     {
       "route": "/api/*",

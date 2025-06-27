@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Admin - Redirecting...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f1f1f1;
+        }
+        .loading {
+            color: #666;
+            margin: 20px 0;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>WordPress Admin</h1>
+    <div class="loading">Redirecting to WordPress admin...</div>
+    <div class="spinner"></div>
+    
+    <script>
+        // Get the current path and redirect to the WordPress backend
+        const currentPath = window.location.pathname;
+        const backendUrl = 'https://4.213.183.90';
+        
+        // Preserve the full path including query parameters
+        const fullUrl = window.location.href;
+        const urlParts = fullUrl.split('/');
+        const pathAfterDomain = urlParts.slice(3).join('/'); // Remove protocol, domain, and port
+        
+        // Construct the target URL
+        let targetUrl;
+        if (currentPath.startsWith('/admin')) {
+            targetUrl = `${backendUrl}/wp-admin/${pathAfterDomain.replace('admin/', '')}`;
+        } else if (currentPath.startsWith('/wp-admin')) {
+            targetUrl = `${backendUrl}${currentPath}`;
+        } else if (currentPath === '/wp-login.php') {
+            targetUrl = `${backendUrl}/wp-login.php`;
+        } else {
+            targetUrl = `${backendUrl}${currentPath}`;
+        }
+        
+        // Add query parameters if they exist
+        if (window.location.search) {
+            targetUrl += window.location.search;
+        }
+        
+        // Add hash if it exists
+        if (window.location.hash) {
+            targetUrl += window.location.hash;
+        }
+        
+        console.log('Redirecting to:', targetUrl);
+        
+        // Redirect after a short delay to show loading message
+        setTimeout(() => {
+            window.location.href = targetUrl;
+        }, 1000);
+    </script>
+</body>
+</html> 
