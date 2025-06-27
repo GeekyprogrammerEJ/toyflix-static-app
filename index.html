@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyflix - Your Toy Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo.png" alt="Toyflix Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/admin" class="admin-link">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Toyflix</h1>
+                <p>Your one-stop destination for amazing toys and games</p>
+                <button class="cta-button" onclick="loadProducts()">Shop Now</button>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <h2>Featured Products</h2>
+            <div id="products-container" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Toyflix</h2>
+            <p>We provide the best toys and games for children of all ages. Quality and safety are our top priorities.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any inquiries or support.</p>
+            <div class="contact-info">
+                <p>Email: info@toyflix.in</p>
+                <p>Phone: +91-XXXXXXXXXX</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Toyflix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
